@@ -1,0 +1,126 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #CB6040;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #798645;
+        }
+        .toggle {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .toggle a {
+            color: #CB6040;
+            text-decoration: none;
+        }
+        .toggle a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="login-container">
+    <h2>Login</h2>
+    <form id="loginForm" method="post" action="http://localhost:8080/api/auth/login">
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+
+        <button type="submit" id="submitLogin">Login</button>
+    </form>
+    <div class="toggle">
+        <p>Don't have an account? <a href="#" id="showRegisterForm">Register here</a></p>
+    </div>
+</div>
+
+<div class="container" id="register-container" style="display: none;">
+    <h2>Register</h2>
+    <form id="registerForm" method="post" action="http://localhost:8080/api/auth/register">
+        <label for="registerEmail">Email:</label>
+        <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+
+        <label for="registerPassword">Password:</label>
+        <input type="password" id="registerPassword" name="password" placeholder="Enter your password" required>
+
+        <label for="writeMessage">Message:</label>
+        <input type="text" id="writeMessage" name="message" placeholder="Write your message here" required>
+
+        <button type="submit" id="submitNewUser">Register</button>
+    </form>
+    <div class="toggle">
+        <p>Already have an account? <a href="#" id="showLoginForm">Login here</a></p>
+    </div>
+</div>
+
+<script>
+    // Script to toggle between login and registration forms
+    const loginContainer = document.getElementById('login-container');
+    const registerContainer = document.getElementById('register-container');
+    const showRegisterForm = document.getElementById('showRegisterForm');
+    const showLoginForm = document.getElementById('showLoginForm');
+
+    showRegisterForm.addEventListener('click', function (event) {
+        event.preventDefault();
+        loginContainer.style.display = 'none';
+        registerContainer.style.display = 'block';
+    });
+
+    showLoginForm.addEventListener('click', function (event) {
+        event.preventDefault();
+        registerContainer.style.display = 'none';
+        loginContainer.style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
